@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUYỆN TẬP CẤU TRÚC ĐIỀU KIỆN 02</title>
+</head>
+
+<body>
+    <h3>Bài 1</h3>
+    <input type="number" id="c" value="" placeholder="Nhập độ C" />
+    <input type="button" id="f" value="Chuyển đổi sang độ F" onclick="change()" />
+    <p id="demo"></p>
+    <script>
+        function change() {
+            let a = parseFloat(document.getElementById("c").value);
+            let f = (a * 9) / 5 + 32;
+            document.getElementById("demo").innerHTML = "Độ F=" + f + " F";
+        }
+    </script>
+    <h3>Bài 2</h3>
+    <input type="number" id="m" value="" placeholder="Nhập chiều dài (m)" />
+    <input type="button" id="ft" value="Chuyển đổi sang ft" onclick="change2()" />
+    <p id="demo2"></p>
+    <script>
+        function change2() {
+            let a = parseFloat(document.getElementById("m").value);
+            let ft = a * 3.2808;
+            document.getElementById("demo2").innerHTML = "Chiều dài =" + ft + "ft";
+        }
+    </script>
+    <h3>Bài 3</h3>
+    <input type="number" value="" id="square" placeholder="Nhập chiều dài cạnh" />
+    <input type="button" value="Diện tích hình vuông" onclick="square()" />
+    <script>
+        function square() {
+            let a = parseFloat(document.getElementById("square").value);
+            let x = a * a;
+            alert("Diện tích hình vuông là :" + x);
+        }
+    </script>
+    <h3>Bài 4</h3>
+    <input type="button" value="Diện tích hình chữ nhật" id="rectAngle" onclick="rectAngle()" />
+    <script>
+        function rectAngle() {
+            let a = parseFloat(prompt("Nhập cạnh của hình chữ nhật: a"));
+            let b = parseFloat(prompt("Nhập cạnh của hình chữ nhật b:"));
+            let x = a * b;
+            alert("Diện tích của hình chữ nhật là:" + x);
+        }
+    </script>
+    <h3>bài 5</h3>
+    <input type="button" value="Diện tích tam giác vuông" id="RtriAngle" onclick="RtriAngle()" />
+    <script>
+        function RtriAngle() {
+            let a = parseFloat(prompt("Nhập cạnh kề của tam giác vuông a: "));
+            let b = parseFloat(prompt("Nhập cạnh kề của tam giác vuông b: "));
+            let x = (1 / 2) * a * b;
+            alert("Diện tích tam giác vuông là:" + x);
+        }
+    </script>
+    <h3>Bài 6 Giải phương trình bậc I</h3>
+    <p>Phương trình có dạng:</p>
+    <p>ax+b=0 (a&#8800;0)</p>
+    <input type="number" value="" id="soa" placeholder="Nhập a" />
+    <input type="number" value="" id="sob" placeholder="Nhập b" />
+    <input type="button" value="Tìm x" id="" onclick="ptbacI()" />
+    <script>
+        function ptbacI() {
+            let a = parseFloat(document.getElementById("soa").value);
+            let b = parseFloat(document.getElementById("sob").value);
+            if (a === 0) {
+                alert("Phương trình vô nghiệm");
+            } else {
+                x = -b / a;
+                alert("Nghiệm của phương trình x = :" + x);
+            }
+        }
+    </script>
+    <h3>Bài 7: Giải phương trình bậc II</h3>
+    <p>Phương trình có dạng:</p>
+    <p><img src="ptrinhbacII.png" alt="" /> (a&#8800;0)</p>
+    <input type="number" value="" id="a" placeholder="Nhập a" />
+    <input type="number" value="" id="b" placeholder="Nhập b" />
+    <input type="number" value="" id="c1" placeholder="Nhập c" />
+    <input type="button" value="Tìm nghiệm" id="" onclick="ptbacII()" />
+    <p id="n0"></p>
+
+    <script>
+        function ptbacII() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c1").value);
+            let delta = b * b - 4 * a * c;
+            const n0 = document.getElementById("n0");
+
+            if (a === 0) {
+                n0.innerHTML = "Phương trình có 1 nghiệm:" + -c / b;
+            } else if (delta < 0) {
+                n0.innerHTML = "Phương trình vô  nghiệm";
+            } else if (delta === 0) {
+                n0.innerHTML =
+                    "Phương trình có 2 nghiệm kép x1 = x2 = " + (-b / 2) * a;
+            } else {
+                n0.innerHTML =
+                    "Phương trình có 2 nghiệm: x1 = " +
+                    ((-b + Math.sqrt(delta)) / 2) * a +
+                    " " +
+                    "x2=" +
+                    ((-b - Math.sqrt(delta)) / 2) * a;
+            }
+        }
+    </script>
+    <h3>Bài 8</h3>
+    <input type="button" value="Check age" id="" onclick="CheckAge()" />
+    <script>
+        function CheckAge() {
+            let a = parseInt(prompt("Nhập vào một số:"));
+            if (a > 0 && a < 120) {
+                alert("Đây là số tuổi của một người");
+            } else alert("Đây không phải là tuổi của một người");
+        }
+    </script>
+    <h3>Bài 9:</h3>
+    <input type="number" value="" id="ta" placeholder="Nhập cạnh của tam giác: a" />
+    <input type="number" value="" id="tb" placeholder="Nhập cạnh của tam giác: b" />
+    <input type="number" value="" id="tc" placeholder="Nhập cạnh của tam giác: c" />
+    <input type="button" value="Check" id="" onclick="Triangle()" />
+    <script>
+        function Triangle() {
+            let a = parseFloat(document.getElementById("ta").value);
+            let b = parseFloat(document.getElementById("tb").value);
+            let c = parseFloat(document.getElementById("tc").value);
+            if (a > 0 && b > 0 && c > 0) {
+                if (a + b > c && a + c > b && b + c > a) {
+                    alert("Đây là 3 cạnh của một tam giác");
+                } else alert("đây không phải là 3 cạnh của một tam giác");
+            } else alert("đây không phải là 3 cạnh của một tam giác");
+        }
+    </script>
+    <h3>Bài 10 tính tiền điện</h3>
+    <table style="font-weight: 400; width: 302px">
+        <tbody>
+            <tr>
+                <td style="width: 222px">
+                    <span style="font-size: 16px"><strong>Giá</strong
+              ><strong>&nbsp;bán lẻ điện sinh hoạt</strong></span
+            >
+          </td>
+          <td style="width: 68px">
+            <span style="font-size: 16px"><strong>&nbsp;Giá</strong></span>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 222px">
+                    <span style="font-size: 16px">Bậc 1: Cho kWh từ&nbsp;0-50</span>
+                </td>
+                <td style="width: 68px">
+                    <span style="font-size: 16px">1.549</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 222px">
+                    <span style="font-size: 16px">Bậc 2: Cho kWh từ 51 – 100</span>
+                </td>
+                <td style="width: 68px">
+                    <span style="font-size: 16px">1.600</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 222px">
+                    <span style="font-size: 16px">Bậc 3: Cho kWh từ 101 -200</span>
+                </td>
+                <td style="width: 68px">
+                    <span style="font-size: 16px">1.858</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 222px">
+                    <span style="font-size: 16px">Bậc 4: Cho kWh từ 201 -300</span>
+                </td>
+                <td style="width: 68px">
+                    <span style="font-size: 16px">2.340</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 222px">
+                    <span style="font-size: 16px">Bậc 5: Cho kWh từ 301 -400</span>
+                </td>
+                <td style="width: 68px">
+                    <span style="font-size: 16px">2.615</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 222px">
+                    <span style="font-size: 16px">Bậc 6: Cho kWh từ 401 trở lên</span>
+                </td>
+                <td style="width: 68px">
+                    <span style="font-size: 16px">2.701</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+    <input type="button" value="Tính tiền" id="" onclick="bill()" />
+    <script>
+        function bill() {
+            let a = parseFloat(prompt("Nhập số điện tiêu thụ (kWh)"));
+            let bill;
+
+            if (a < 50) {
+                bill = a * 1.549;
+                alert("Tiền điện là: " + bill);
+            } else if (a < 100) {
+                bill = a * 1.6;
+                alert("Tiền điện là: " + bill);
+            } else if (a < 200) {
+                bill = a * 1.858;
+                alert("Tiền điện là: " + bill);
+            } else if (a < 300) {
+                bill = a * 2.34;
+                alert("Tiền điện là: " + bill);
+            } else if (a < 400) {
+                bill = a * 2.615;
+                alert("Tiền điện là: " + bill);
+            } else {
+                bill = a * 2701;
+                alert("Tiền điện là: " + bill);
+            }
+        }
+    </script>
+    <h3>Bài 11</h3>
+    <p>
+        Viết chương trình tính thuế thu nhập cá nhân của một người theo hướng dẫn và thông tin sau đầy:
+    </p>
+    <p>Bậc 1: 4 triệu đồng/tháng 0%;</p>
+    <p>Bậc 2: Trên 4 - 6 triệu đồng/tháng: 5%;</p>
+    <p>Bậc 3: Trên 6 - 9 triệu đồng: 10%;</p>
+    <p>Bậc 4: Trên 9 - 14 triệu đồng/tháng: 15%;</p>
+    <p>Bậc 5: trên 14 - 24 triệu đồng/tháng: 20%;</p>
+    <p>Bậc 6: Trên 24 - 44 triệu đồng/tháng: 25%;</p>
+    <p>Bậc 7: Trên 44 - 84 triệu đồng/tháng: 30%;</p>
+    <p>Bậc 8: Trên 84 triệu đồng: 35%.</p>
+    <input type="button" value="Tính tiền nộp thuế" id="" onclick="Tax()">
+    <script>
+        function Tax() {
+            let a = parseFloat(prompt("Nhập tiên lương tháng:( đồng)"));
+            let tax;
+            if (a < 4) {
+                alert("Bạn không cần nộp thuế")
+            } else if (a < 6000000) {
+                tax = a * 5 / 100;
+                alert("Bạn phải nộp thuế:" + tax);
+            } else if (a < 9000000) {
+                tax = a * 10 / 100;
+                alert("Bạn phải nộp thuế:" + tax);
+
+            } else if (a < 14000000) {
+                tax = a * 15 / 100;
+                alert("Bạn phải nộp thuế:" + tax);
+
+            } else if (a < 24000000) {
+                tax = a * 20 / 100;
+                alert("Bạn phải nộp thuế:" + tax);
+            } else if (a < 44000000) {
+                tax = a * 25 / 100;
+                alert("Bạn phải nộp thuế:" + tax);
+            } else if (a < 84000000) {
+                tax = a * 30 / 100;
+                alert("Bạn phải nộp thuế:" + tax);
+            } else {
+                tax = a * 35 / 100;
+                alert("Bạn phải nộp thuế:" + tax);
+            }
+        }
+    </script>
+    <h3>Bài 12: Tính lãi suất ngân hàng gởi tiết kiệm</h3>
+    <table>
+        <tr>
+            <td>Kì hạn</td>
+            <td>VND</td>
+        </tr>
+        <tr>
+            <td>Không kì hạn</td>
+            <td>0.1%</td>
+        </tr>
+        <tr>
+            <td>1 tháng</td>
+            <td>3.3%</td>
+        </tr>
+        <tr>
+            <td>2 tháng</td>
+            <td>3.3%</td>
+        </tr>
+        <tr>
+            <td>3 tháng</td>
+            <td>3.6%</td>
+        </tr>
+        <tr>
+            <td>5 tháng</td>
+            <td>3.6%</td>
+        </tr>
+        <tr>
+            <td>6 tháng</td>
+            <td>4.2%</td>
+        </tr>
+        <tr>
+            <td>9 tháng</td>
+            <td>4.2%</td>
+        </tr>
+        <tr>
+            <td>12 tháng</td>
+            <td>5.8%</td>
+        </tr>
+        <tr>
+            <td>13 tháng</td>
+            <td>5.8%</td>
+        </tr>
+
+        <tr>
+            <td>15 tháng</td>
+            <td>5.8%</td>
+        </tr>
+        <tr>
+            <td>18 tháng</td>
+            <td>5.8%</td>
+        </tr>
+        <tr>
+            <td>24 tháng</td>
+            <td>5.8%</td>
+        </tr>
+        <tr>
+            <td>36 tháng</td>
+            <td>5.8%</td>
+        </tr>
+
+    </table>
+
+    <input type="number" value="" placeholder="Nhập số tiền muốn gởi tiết kiệm " id="deposits">
+    <select name="" id="period">
+        <option value="Không kì hạn">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="9">9</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="15">15</option>
+        <option value="18">18</option>
+        <option value="24">24</option>
+        <option value="36">36</option>
+
+    </select>
+    <input type="button" value="Lãi suất" id="rate" onclick="InterestRate()">
+    <script>
+        function InterestRate() {
+            let a = parseFloat(document.getElementById("deposits").value);
+            console.log(a);
+            let b = parseInt(document.getElementById("period").value);
+            console.log(b);
+            let rate;
+            switch (b) {
+                case 0:
+                    rate = a * 0.1 / 100;
+                    alert("Tiền lãi hằng tháng là: " + rate);
+                    break;
+                case 1:
+                case 2:
+                    rate = a * 3.3 / 100;
+                    alert("Tiền lãi hằng tháng là: " + rate);
+                    break;
+                case 3:
+                case 5:
+                    rate = a * 3.6 / 100;
+                    alert("Tiền lãi hằng tháng là: " + rate);
+                    break;
+                case 6:
+                case 9:
+                    rate = a * 4.2 / 100;
+                    alert("Tiền lãi hằng tháng là: " + rate);
+                    break;
+                case 12:
+                case 13:
+                case 15:
+                case 18:
+                case 24:
+                case 36:
+                    rate = a * 4.2 / 100;
+                    alert("Tiền lãi hằng tháng là: " + rate);
+                    break;
+
+
+            }
+
+        }
+    </script>
+
+
+    <body>
+
+</html>
